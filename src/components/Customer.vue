@@ -35,7 +35,6 @@ export default {
       return this.$store.getters.happyStaff;
     },
     screamingPerson () {
-      console.log(this.$store.getters.screamingPerson);
       return this.$store.getters.screamingPerson;
     }
   },
