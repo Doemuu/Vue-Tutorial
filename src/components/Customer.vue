@@ -22,6 +22,8 @@
 </template>
 
 <script>
+import getRandomInt from '@/services/random-number-generator.ts';
+
 export default {
   name: 'Customer',
   computed: {
@@ -43,18 +45,13 @@ export default {
         this.triggerPerson();
     },
     triggerPerson(){
-      let rndmInt = this.getRandomInt(2);
-      console.log(rndmInt);
-      if(rndmInt == 1){
-        if(this.getRandomInt(2) == 0){
+      if(getRandomInt(3) == 1){
+        if(getRandomInt(2) == 0){
           this.$store.dispatch("alterScreamingPerson", "Jenny");
         }else{
           this.$store.dispatch("alterScreamingPerson", "Larry");
         }
       }
-    },
-    getRandomInt(max){
-      return Math.floor(Math.random()* Math.floor(max));
     }
   }
 }
